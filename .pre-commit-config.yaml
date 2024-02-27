@@ -1,0 +1,41 @@
+repos:
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v4.5.0
+  hooks:
+    - id: check-yaml
+      args: [--allow-multiple-documents]
+    - id: end-of-file-fixer
+    - id: trailing-whitespace
+    - id: check-merge-conflict
+    - id: check-json
+    - id: check-case-conflict
+    - id: detect-private-key
+    - id: no-commit-to-branch
+      args: [--branch, master, --pattern, release/.*]
+
+- repo: https://github.com/psf/black
+  rev: 22.10.0
+  hooks:
+    - id: black
+
+- repo: https://github.com/pre-commit/mirrors-prettier
+  rev: "v3.0.0-alpha.6"
+  hooks:
+    - id: prettier
+      name: Check JS, TS files
+      files: \.(js|jsx|ts|tsx)$
+      additional_dependencies:
+        - prettier@3.2.5
+      entry: bash -c '$nix_node node_modules/prettier --write --ignore-unknown'
+
+-   repo: https://github.com/pre-commit/mirrors-eslint
+    rev: 'v9.0.0-beta.1'
+    hooks:
+    - id: eslint
+      additional_dependencies:
+        - eslint@5.16.0
+        - eslint-config-google@0.7.1
+        - eslint-config-prettier@4.3.0
+        - eslint-loader@1.6.1
+        - eslint-plugin-react@6.10.3
+        - babel-eslint@9.0.0

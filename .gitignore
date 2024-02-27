@@ -1,0 +1,24 @@
+## Bazel
+/bazel-*
+/user.bazelrc
+
+## Terraform
+**/.terraform/*
+.terraform.lock.hcl
+crash.log
+*.tfstate
+*.tfstate.*
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+.vscode
+*.code-workspace
+
+# node
+/node_modules

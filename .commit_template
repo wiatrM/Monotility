@@ -1,0 +1,10 @@
+## 1. Commit title, in format Type: title, max 72 characters.
+# Types: feat, fix, docs, style, refactor, test, chore
+# vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+{type}: {title}
+
+## 2. Message body: 20 to maximum 80 characters per line.
+# vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+
+## 3. Jira reference
+# vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv

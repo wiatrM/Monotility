@@ -1,4 +1,6 @@
-{ pkgs ? import <nixpkgs> {} }:
+{ pkgs ? import <nixpkgs> {
+  config.allowUnfree = true;
+} }:
 
 with pkgs;
 pkgs.mkShell {
@@ -32,6 +34,7 @@ pkgs.mkShell {
     kubectl
     kubernetes-helm
     ansible
+    terraform
     (google-cloud-sdk.withExtraComponents [
       google-cloud-sdk.components.gke-gcloud-auth-plugin
     ])

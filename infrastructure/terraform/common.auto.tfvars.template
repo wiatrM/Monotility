@@ -1,0 +1,4 @@
+project_id = "monotility-415613"  # Your GCP project ID
+region = "europe-central2"        # Your GCP region
+zone = "europe-central2-a"        # Your GCP zone
+credentials_file = "<path to your credentials file>"  # relative to this dir, eg ../credentials.json

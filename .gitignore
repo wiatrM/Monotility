@@ -22,3 +22,6 @@ crash.log
 
 # node
 /node_modules
+
+# GCP Service Account
+monotility-*.json

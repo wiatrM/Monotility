@@ -1,19 +1,29 @@
 # Use ./modules/gke to create dev kubernetes cluster
 
 module "dev_gke_deployment" {
-  source = "./modules/gke"
+  source = "./modules/gke-cluster"
   env = "dev"
-  region = "europe-central2"
-  zone = "europe-central2-a"
+  region = var.region
+  zone = var.zone
   project_id = var.project_id
-  credentials_file = "../../monotility-415613-b53c2b3dea2c.json"
+  credentials_file = "../${var.credentials_file}"
 }
 
 provider "google" {
-  credentials = file("../monotility-415613-b53c2b3dea2c.json")
+  credentials = file(var.credentials_file)
   project = var.project_id
   region = var.region
   zone = var.zone
+  scopes = [
+    # Default scopes
+    "https://www.googleapis.com/auth/compute",
+    "https://www.googleapis.com/auth/cloud-platform",
+    "https://www.googleapis.com/auth/ndev.clouddns.readwrite",
+    "https://www.googleapis.com/auth/devstorage.full_control",
+
+    # Required for google_client_openid_userinfo
+    "https://www.googleapis.com/auth/userinfo.email",
+  ]
 }
 
 terraform {
